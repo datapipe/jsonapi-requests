@@ -18,7 +18,7 @@ class Factory:
             VALIDATE_SSL=self.VALIDATE_SSL,
             TIMEOUT=self.TIMEOUT,
             APPEND_SLASH=self.APPEND_SLASH,
-            RETRIES=self.RETRIES
+            RETRIES=self.RETRIES,
             HEADERS=self.HEADERS,
         )
 
