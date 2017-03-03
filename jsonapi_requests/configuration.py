@@ -3,7 +3,7 @@ from collections import namedtuple
 
 Configuration = namedtuple(
     'Configuration',
-    ['API_ROOT', 'AUTH', 'VALIDATE_SSL', 'TIMEOUT', 'APPEND_SLASH', 'RETRIES']
+    ['API_ROOT', 'AUTH', 'VALIDATE_SSL', 'TIMEOUT', 'APPEND_SLASH', 'RETRIES', 'HEADERS']
 )
 
 
@@ -18,7 +18,8 @@ class Factory:
             VALIDATE_SSL=self.VALIDATE_SSL,
             TIMEOUT=self.TIMEOUT,
             APPEND_SLASH=self.APPEND_SLASH,
-            RETRIES=self.RETRIES,
+            RETRIES=self.RETRIES
+            HEADERS=self.HEADERS,
         )
 
     @property
@@ -27,6 +28,10 @@ class Factory:
         if not url.endswith('/'):
             url += '/'
         return url
+
+    @property
+    def HEADERS(self):
+        return self._config_dict.get('HEADERS', None)
 
     @property
     def AUTH(self):

@@ -78,6 +78,8 @@ class ApiRequestFactory:
             options['auth'] = self.config.AUTH
         if self.config.TIMEOUT:
             options['timeout'] = self.config.TIMEOUT
+        if self.config.HEADERS:
+            options['headers'] = self.config.HEADERS
         return options
 
     def _parse_response(self, response):
